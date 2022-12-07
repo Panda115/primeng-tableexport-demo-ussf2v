@@ -18,11 +18,11 @@ export class AppComponent {
   exportColumns: any[];
 
   ngOnInit() {
-    this.productService
-      .getProductsSmall()
-      .then((data) => (this.products = data));
+    this.productService.getProductsSmall().then((data) => {
+      this.products = data;
+      console.log(this.products);
+    });
 
-    console.log(this.products);
     this.cols = [
       { field: 'code', header: 'Code' },
       { field: 'name', header: 'Name' },
